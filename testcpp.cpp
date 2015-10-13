@@ -93,7 +93,9 @@ strcpy(monstr[12], "Dec");
         //opsmode = 'a' best understanding of how afspc code works
         //opsmode = 'i' imporved sgp4 resulting in smoother behavior
         printf("input operation mode a, i \n");
-        scanf(" %c", &opsmode);
+				// ppl
+				opsmode = 'i';
+        //scanf(" %c", &opsmode);
         printf("you entered: %c\n", opsmode);
 
         //typerun = 'c' compare 1 year of full satcat data
@@ -101,7 +103,9 @@ strcpy(monstr[12], "Dec");
         //              start, stop, and delta times
         //typerun = 'm' maunual operation- either mfe, epoch, or dayof yr also
         printf("input type of run c, v, m \n");
-        scanf(" %c", &typerun);
+				// ppl
+				typerun = 'v';
+        //scanf(" %c", &typerun);
         printf("you entered: %c\n", typerun);
 
         //typeinput = 'm' input start stop mfe
@@ -117,7 +121,9 @@ strcpy(monstr[12], "Dec");
             typeinput = 'e';
 
         printf("input which constants 721 72 84 \n");
-        scanf( "%i",&whichcon );
+				// ppl
+				whichcon = 72;
+        //scanf( "%i",&whichcon );
         if (whichcon == 721) whichconst = wgs72old;
         if (whichcon == 72) whichconst = wgs72;
         if (whichcon == 84) whichconst = wgs84;
@@ -127,7 +133,8 @@ strcpy(monstr[12], "Dec");
         // ---------------- setup files for operation ------------------
         // input 2-line element set file
         printf("input elset filename: \n");
-        scanf( "%s",infilename );
+				strcpy(infilename, "sgp4-ver.tle");
+        // scanf( "%s",infilename );
         infile = fopen(infilename, "r");
         if (infile == NULL)
 	  {
@@ -163,10 +170,10 @@ strcpy(monstr[12], "Dec");
                 fgets( longstr2,130,infile);
                 // convert the char string to sgp4 elements
                 // includes initialization of sgp4
-                twoline2rv( longstr1, longstr2, typerun, typeinput, opsmode, whichconst, 
+                twoline2rv( longstr1, longstr2, typerun, typeinput, opsmode, whichconst,
                             startmfe, stopmfe, deltamin, satrec );
                 fprintf(outfile, "%ld xx\n", satrec.satnum);
-                printf(" %ld\n", satrec.satnum);
+                printf("// %ld\n", satrec.satnum);
                 // call the propagator to get the initial state vector value
                 sgp4 (whichconst, satrec,  0.0, ro,  vo);
 

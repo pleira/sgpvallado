@@ -325,7 +325,7 @@ static void dpper
          }
        }   // if init == 'n'
 
-#include "debug1.cpp"
+//#include "debug1.cpp"
 }  // end dpper
 
 /*-----------------------------------------------------------------------------
@@ -593,7 +593,7 @@ static void dscom
      xh2  =  -2.0 * s2 * z22;
      xh3  =  -2.0 * s2 * (z23 - z21);
 
-#include "debug2.cpp"
+//#include "debug2.cpp"
 }  // end dscom
 
 /*-----------------------------------------------------------------------------
@@ -897,7 +897,7 @@ static void dsinit
          nm    = no + dndt;
        }
 
-#include "debug3.cpp"
+//#include "debug3.cpp"
 }  // end dsinit
 
 /*-----------------------------------------------------------------------------
@@ -1119,7 +1119,7 @@ static void dspace
          nm = no + dndt;
        }
 
-#include "debug4.cpp"
+//#include "debug4.cpp"
 }  // end dsspace
 
 /*-----------------------------------------------------------------------------
@@ -1968,7 +1968,7 @@ bool sgp4
          return false;
        }
 
-#include "debug7.cpp"
+//#include "debug7.cpp"
      return true;
 }  // end sgp4
 
@@ -2105,8 +2105,3 @@ void getgravconst
          }
 
      }   // end getgravconst
-
-
-
-
-
