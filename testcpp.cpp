@@ -122,7 +122,7 @@ strcpy(monstr[12], "Dec");
 
         printf("input which constants 721 72 84 \n");
 				// ppl
-				whichcon = 72;
+				whichcon = 84;
         //scanf( "%i",&whichcon );
         if (whichcon == 721) whichconst = wgs72old;
         if (whichcon == 72) whichconst = wgs72;
