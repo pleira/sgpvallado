@@ -1855,6 +1855,8 @@ bool sgp4
        } // if method = d
 
      /* -------------------- long period periodics ------------------ */
+     double sul = 0.0;
+
      if (satrec.method == 'd')
        {
          sinip =  sin(xincp);
@@ -1917,6 +1919,7 @@ bool sgp4
          temp   = 1.0 / pl;
          temp1  = 0.5 * j2 * temp;
          temp2  = temp1 * temp;
+         sul = su;
 
          /* -------------- update for short period periodics ------------ */
          if (satrec.method == 'd')
@@ -1968,7 +1971,7 @@ bool sgp4
          return false;
        }
 
-#include "debug7.cpp"
+#include "debug8.cpp"
      return true;
 }  // end sgp4
 

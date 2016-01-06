@@ -147,9 +147,9 @@ strcpy(monstr[12], "Dec");
           else
             {
             if (typerun == 'v')
-                outfile = fopen("tcppver.out", "w");
+                outfile = fopen("test_cpp_version.out", "w");
               else
-                outfile = fopen("tcpp.out", "w");
+                outfile = fopen("test_cpp_version_o.out", "w");
             }
 
 //        dbgfile = fopen("sgp4test.dbg", "w");
@@ -178,13 +178,16 @@ strcpy(monstr[12], "Dec");
                 sgp4 (whichconst, satrec,  0.0, ro,  vo);
 
 // generate .e files for stk
+
 jd = satrec.jdsatepoch;
 strncpy(outname,&longstr1[2],5);
 outname[5]= '.';
 outname[6]= 'e';
 outname[7]= '\0';
 invjday( jd, year,mon,day,hr,min, sec );
+/*
 outfilee = fopen(outname, "w");
+
 fprintf(outfilee,"stk.v.4.3 \n"); // must use 4.3...
 fprintf(outfilee,"\n");
 fprintf(outfilee,"BEGIN Ephemeris \n");
@@ -204,7 +207,7 @@ fprintf(outfilee,"EphemerisTimePosVel \n");
 fprintf(outfilee," \n");
 fprintf(outfilee, " %16.8f %16.8f %16.8f %16.8f %12.9f %12.9f %12.9f\n",
                  satrec.t,ro[0],ro[1],ro[2],vo[0],vo[1],vo[2]);
-
+*/
                 fprintf(outfile, " %16.8f %16.8f %16.8f %16.8f %12.9f %12.9f %12.9f\n",
                         satrec.t,ro[0],ro[1],ro[2],vo[0],vo[1],vo[2]);
 
@@ -245,8 +248,8 @@ fprintf(outfilee, " %16.8f %16.8f %16.8f %16.8f %12.9f %12.9f %12.9f\n",
                             jd = satrec.jdsatepoch + tsince/1440.0;
                             invjday( jd, year,mon,day,hr,min, sec );
 
-                            fprintf(outfilee, " %16.6f %16.8f %16.8f %16.8f %12.9f %12.9f %12.9f \n",
-                                           tsince*60.0,ro[0],ro[1],ro[2],vo[0],vo[1],vo[2]);
+//                            fprintf(outfilee, " %16.6f %16.8f %16.8f %16.8f %12.9f %12.9f %12.9f \n",
+//                                           tsince*60.0,ro[0],ro[1],ro[2],vo[0],vo[1],vo[2]);
 
                             fprintf(outfile, " %16.8f %16.8f %16.8f %16.8f %12.9f %12.9f %12.9f",
                                            tsince,ro[0],ro[1],ro[2],vo[0],vo[1],vo[2]);
@@ -260,8 +263,8 @@ fprintf(outfilee, " %16.8f %16.8f %16.8f %16.8f %12.9f %12.9f %12.9f\n",
 
                   } // while propagating the orbit
 
-fprintf(outfilee," END Ephemeris \n");
-fclose (outfilee);
+//fprintf(outfilee," END Ephemeris \n");
+//fclose (outfilee);
 
               } // if not eof
 
