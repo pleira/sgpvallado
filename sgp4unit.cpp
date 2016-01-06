@@ -1245,7 +1245,7 @@ static void initl
         gsto = gstime(epoch + 2433281.5);
 
 
-#include "debug5.cpp"
+//#include "debug5.cpp"
 }  // end initl
 
 /*-----------------------------------------------------------------------------
@@ -1595,7 +1595,7 @@ bool sgp4init
 
        satrec.init = 'n';
 
-#include "debug6.cpp"
+//#include "debug6.cpp"
        //sgp4fix return boolean. satrec.error contains any error codes
        return true;
 }  // end sgp4init
@@ -1968,7 +1968,7 @@ bool sgp4
          return false;
        }
 
-//#include "debug7.cpp"
+#include "debug7.cpp"
      return true;
 }  // end sgp4
 

@@ -4,6 +4,7 @@
        {
          printf( "//%84s\n",
                          "------------------after sgp4   :---------------");
+        printf( "checkSgp4_%d_%d(res: Sgp4Result) = {\n import res._\n", satrec.satnum, static_cast<int>(satrec.t));
          printf( " //   inputs : \n");
          printf( " assert( %7s === %15d ); assert( %7s === %15d ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); \n",
            "isimp ", satrec.isimp, "method ", satrec.method,
@@ -35,7 +36,7 @@
              "nodecf",  satrec.nodecf);
          printf( "//    outputs : \n");
          printf(
-             "// assert( %7s === %15d ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); \n",
+             "assert( %7s === %15d ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); \n",
              "error ", satrec.error, "x ", r[0], "y ", r[1], "z ", r[2],
              "xdot ", v[0], "ydot ", v[1], "zdot ", v[2]);
          printf( "//    extra inputs for ds : \n");
@@ -83,7 +84,8 @@
              "xl2 ",  satrec.xl2,  "xl3 ",   satrec.xl3,
              "xl4 ",  satrec.xl4,  "xlamo ", satrec.xlamo,
              "zmol ", satrec.zmol, "zmos ",  satrec.zmos);
-         printf( "// assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); \n",
+         printf( "assert( %7s === %15.9f ); assert( %7s === %15.9f ); assert( %7s === %15.9f ); \n",
              "atime ", satrec.atime, "xli ", satrec.xli,
              "xni ",   satrec.xni);
+       printf("} \n");
        }

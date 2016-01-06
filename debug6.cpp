@@ -76,5 +76,5 @@
            "// %17s%15.9f); assert( %7s === %15.9f); assert( %7s === %15.9f); assert( %7s === %15.9f); assert( %7s === %15.9f); assert( %7s === %15.9f ); \n",
            "xl4 ", satrec.xl4, "xli ",  satrec.xli,  "xlamo ", satrec.xlamo,
            "xni ", satrec.xni, "zmol ", satrec.zmol, "zmos ",  satrec.zmos);
-          printf( "} \n");
+       printf("} \n");
     }
